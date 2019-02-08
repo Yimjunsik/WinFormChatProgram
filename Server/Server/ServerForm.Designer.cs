@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textStatus);
             this.Controls.Add(this.buttonDisconnect);
@@ -141,6 +141,7 @@
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.textAddress);
             this.Controls.Add(this.labelAddress);
+            this.MaximizeBox = false;
             this.Name = "ServerForm";
             this.Text = "Chatting by junsik - Server";
             this.Load += new System.EventHandler(this.ServerForm_Load);
