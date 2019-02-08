@@ -34,6 +34,7 @@
             this.textPort = new System.Windows.Forms.TextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonDisconnect = new System.Windows.Forms.Button();
+            this.textStatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -94,11 +95,22 @@
             this.buttonDisconnect.Text = "종료";
             this.buttonDisconnect.UseVisualStyleBackColor = true;
             // 
+            // textStatus
+            // 
+            this.textStatus.Location = new System.Drawing.Point(3, 38);
+            this.textStatus.Multiline = true;
+            this.textStatus.Name = "textStatus";
+            this.textStatus.ReadOnly = true;
+            this.textStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textStatus.Size = new System.Drawing.Size(554, 461);
+            this.textStatus.TabIndex = 9;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textStatus);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.textPort);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.TextBox textPort;
         private System.Windows.Forms.Button buttonConnect;
         private System.Windows.Forms.Button buttonDisconnect;
+        private System.Windows.Forms.TextBox textStatus;
     }
 }
 
