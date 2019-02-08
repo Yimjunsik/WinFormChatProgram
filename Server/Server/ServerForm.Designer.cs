@@ -36,6 +36,7 @@
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.textStatus = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.NickName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,12 +113,20 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NickName});
             this.dataGridView.Location = new System.Drawing.Point(563, 38);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(194, 461);
             this.dataGridView.TabIndex = 11;
+            // 
+            // NickName
+            // 
+            this.NickName.HeaderText = "닉네임";
+            this.NickName.Name = "NickName";
+            this.NickName.ReadOnly = true;
             // 
             // ServerForm
             // 
@@ -151,6 +160,7 @@
         private System.Windows.Forms.Button buttonDisconnect;
         private System.Windows.Forms.TextBox textStatus;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NickName;
     }
 }
 
