@@ -37,6 +37,7 @@
             this.textStatus = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.NickName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelSend = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +129,22 @@
             this.NickName.Name = "NickName";
             this.NickName.ReadOnly = true;
             // 
+            // labelSend
+            // 
+            this.labelSend.Font = new System.Drawing.Font("굴림", 12F);
+            this.labelSend.Location = new System.Drawing.Point(3, 502);
+            this.labelSend.Name = "labelSend";
+            this.labelSend.Size = new System.Drawing.Size(94, 35);
+            this.labelSend.TabIndex = 6;
+            this.labelSend.Text = "입 력";
+            this.labelSend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.labelSend);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textStatus);
             this.Controls.Add(this.buttonDisconnect);
@@ -162,6 +174,7 @@
         private System.Windows.Forms.TextBox textStatus;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn NickName;
+        private System.Windows.Forms.Label labelSend;
     }
 }
 
