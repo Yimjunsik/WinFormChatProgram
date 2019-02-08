@@ -32,6 +32,8 @@
             this.textAddress = new System.Windows.Forms.TextBox();
             this.labelPort = new System.Windows.Forms.Label();
             this.textPort = new System.Windows.Forms.TextBox();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonDisconnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -72,11 +74,33 @@
             this.textPort.Text = "8080";
             this.textPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Font = new System.Drawing.Font("굴림", 12F);
+            this.buttonConnect.Location = new System.Drawing.Point(563, 3);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(94, 29);
+            this.buttonConnect.TabIndex = 0;
+            this.buttonConnect.Text = "시작";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.Font = new System.Drawing.Font("굴림", 12F);
+            this.buttonDisconnect.Location = new System.Drawing.Point(663, 3);
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.Size = new System.Drawing.Size(94, 29);
+            this.buttonDisconnect.TabIndex = 10;
+            this.buttonDisconnect.Text = "종료";
+            this.buttonDisconnect.UseVisualStyleBackColor = true;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonDisconnect);
+            this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.textPort);
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.textAddress);
@@ -95,6 +119,8 @@
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.TextBox textPort;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Button buttonDisconnect;
     }
 }
 
