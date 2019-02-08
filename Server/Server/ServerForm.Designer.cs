@@ -40,6 +40,7 @@
             this.labelSend = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textSend = new System.Windows.Forms.TextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +157,22 @@
             this.textSend.Size = new System.Drawing.Size(454, 26);
             this.textSend.TabIndex = 7;
             // 
+            // buttonSend
+            // 
+            this.buttonSend.Font = new System.Drawing.Font("굴림", 12F);
+            this.buttonSend.Location = new System.Drawing.Point(563, 505);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(194, 29);
+            this.buttonSend.TabIndex = 8;
+            this.buttonSend.Text = "보내기";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textSend);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelSend);
@@ -196,6 +208,7 @@
         private System.Windows.Forms.Label labelSend;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textSend;
+        private System.Windows.Forms.Button buttonSend;
     }
 }
 
