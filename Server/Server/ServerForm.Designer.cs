@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelAddress = new System.Windows.Forms.Label();
+            this.textAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -41,22 +42,33 @@
             this.labelAddress.Text = "서버 주소";
             this.labelAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textAddress
+            // 
+            this.textAddress.Font = new System.Drawing.Font("굴림", 12F);
+            this.textAddress.Location = new System.Drawing.Point(103, 3);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(246, 26);
+            this.textAddress.TabIndex = 2;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textAddress);
             this.Controls.Add(this.labelAddress);
             this.Name = "ServerForm";
             this.Text = "Chatting by junsik - Server";
             this.Load += new System.EventHandler(this.ServerForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.TextBox textAddress;
     }
 }
 
