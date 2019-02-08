@@ -31,6 +31,7 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.textAddress = new System.Windows.Forms.TextBox();
             this.labelPort = new System.Windows.Forms.Label();
+            this.textPort = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -61,11 +62,22 @@
             this.labelPort.Text = "포트 번호";
             this.labelPort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textPort
+            // 
+            this.textPort.Font = new System.Drawing.Font("굴림", 12F);
+            this.textPort.Location = new System.Drawing.Point(455, 3);
+            this.textPort.Name = "textPort";
+            this.textPort.Size = new System.Drawing.Size(102, 26);
+            this.textPort.TabIndex = 4;
+            this.textPort.Text = "8080";
+            this.textPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textPort);
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.textAddress);
             this.Controls.Add(this.labelAddress);
@@ -82,6 +94,7 @@
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.TextBox textPort;
     }
 }
 
