@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace Server
 {
-    public partial class Form1 : Form
+    public partial class ServerForm : Form
     {
-        public Form1()
+        public ServerForm()
         {
             InitializeComponent();
+        }
+
+        private void ServerForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
