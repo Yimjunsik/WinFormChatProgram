@@ -35,6 +35,8 @@
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.textStatus = new System.Windows.Forms.TextBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -105,11 +107,24 @@
             this.textStatus.Size = new System.Drawing.Size(554, 461);
             this.textStatus.TabIndex = 9;
             // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(563, 38);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.Size = new System.Drawing.Size(194, 461);
+            this.dataGridView.TabIndex = 11;
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textStatus);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.buttonConnect);
@@ -120,6 +135,7 @@
             this.Name = "ServerForm";
             this.Text = "Chatting by junsik - Server";
             this.Load += new System.EventHandler(this.ServerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +150,7 @@
         private System.Windows.Forms.Button buttonConnect;
         private System.Windows.Forms.Button buttonDisconnect;
         private System.Windows.Forms.TextBox textStatus;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
 
