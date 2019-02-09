@@ -165,7 +165,37 @@ namespace Server
                 connectClientList.Remove(asyncObject.WorkingSocket);
             }
         }
+
+        // 텍스트 보내기
+        private void SendText(string message)
+        {
+            if (!serverSocket.IsBound) MessageBox.Show("서버가 실행되고 있지 않습니다.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (string.IsNullOrEmpty(message))
+            {
+                MessageBox.Show("텍스트가 입력되지 않았습니다.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textSend.Focus();
+            }
+            else
+            {
+                sendprocess
+            }
+        }
         
+        // 각 Client들에게 텍스트 보내기
+        private void SendProcess(byte[] byteData)
+        {
+            for (int i = connectClientList.Count - 1; i >= 0; i--)
+            {
+                Socket tempSocket = connectClientList[i];
+                try { tempSocket.Send(byteData); }
+                catch
+                {
+                    tempSocket.Close();
+                    connectClientList.RemoveAt(i);
+                }
+            }
+        }
+
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {
