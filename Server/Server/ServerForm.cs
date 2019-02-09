@@ -177,7 +177,9 @@ namespace Server
             }
             else
             {
-                sendprocess
+                SendProcess(Encoding.UTF8.GetBytes("관리자\x01" + message));
+                AppendText("[보냄] 관리자 : " + message);
+                textSend.Clear();
             }
         }
         
