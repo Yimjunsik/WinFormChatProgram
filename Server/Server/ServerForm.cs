@@ -97,10 +97,7 @@ namespace Server
                 connectClientList.Add(client);
 
                 AppendText("IP : " + client.RemoteEndPoint);
-                client.BeginReceive(asyncObject.Buffer, 0, 4096, 0, receive)
-
-                
-
+                client.BeginReceive(asyncObject.Buffer, 0, 4096, 0, ReceiveData, asyncObject);
             }
             catch { }
         }
