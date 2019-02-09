@@ -92,7 +92,12 @@ namespace Server
 
                 serverSocket.BeginAccept(AcceptCallback, null);
 
-                Ayncobje
+                AsyncObject asyncObject = new AsyncObject(4096);
+                asyncObject.WorkingSocket = client;
+                connectClientList.Add(client);
+
+                AppendText("IP : " + client.RemoteEndPoint);
+                client.BeginReceive(asyncObject.Buffer, 0, 4096, 0, receive)
 
                 
 
@@ -100,6 +105,69 @@ namespace Server
             catch { }
         }
 
+        // Data를 받았을 때 시작되는 Callback
+        private void ReceiveData(IAsyncResult asyncResult)
+        {
+            AsyncObject asyncObject = asyncResult.AsyncState as AsyncObject;
+            try { asyncObject.WorkingSocket.EndReceive(asyncResult); }
+            catch
+            {
+                asyncObject.WorkingSocket.Close();
+                return;
+            }
+
+            string text = Encoding.UTF8.GetString(asyncObject.Buffer);
+            string[] tokens = text.Split('\x01');
+            try
+            {
+                if (tokens[1][0] == '\x02')
+                {
+                    AppendText(tokens[0] + "님이 입장하셨습니다. ( 현재 인원 : " + connectClientList.Count + "명");
+                    try { dataGridView.Rows.Add(new string[] { tokens[0] }); }
+                    catch { }
+                }
+                else if (tokens[1][0] == '\x03')
+                {
+                    AppendText(tokens[0] + "님이 퇴장하셨습니다. (현재 인원 : " + (connectClientList.Count - 1) + "명");
+                    try
+                    {
+                        for (int i = 0; i < dataGridView.Rows.Count; i++)
+                        {
+                            if (tokens[0] == dataGridView.Rows[i].Cells[0].Value as string)
+                            {
+                                dataGridView.Rows.RemoveAt(i);
+                                break;
+                            }
+                        }
+                    }
+                    catch { }
+                }
+                else AppendText("[받음] " + tokens[0] + " : " + tokens[1]);
+            }
+            catch { }
+            for (int i = connectClientList.Count - 1; i >= 0; i--)
+            {
+                Socket tempSocket = connectClientList[i];
+                if (tempSocket != asyncObject.WorkingSocket)
+                {
+                    try { tempSocket.Send(asyncObject.Buffer); }
+                    catch
+                    {
+                        tempSocket.Close();
+                        connectClientList.RemoveAt(i);
+                    }
+                }
+            }
+
+            asyncObject.ClearBuffer();
+            try { asyncObject.WorkingSocket.BeginReceive(asyncObject.Buffer, 0, 4096, 0, ReceiveData, asyncObject); }
+            catch
+            {
+                asyncObject.WorkingSocket.Close();
+                connectClientList.Remove(asyncObject.WorkingSocket);
+            }
+        }
+        
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {
