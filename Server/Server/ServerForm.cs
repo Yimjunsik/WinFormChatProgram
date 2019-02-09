@@ -79,7 +79,8 @@ namespace Server
                 serverSocket.Bind(endPoint);
                 serverSocket.Listen(20);
 
-                serverSocket.BeginAccept(acceptcallback)
+                serverSocket.BeginAccept(AcceptCallback, null);
+                AppendText("서버 시작이 완료되었습니다.");
             }
         }
 
