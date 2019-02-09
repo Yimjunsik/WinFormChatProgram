@@ -29,8 +29,22 @@ namespace Server
         {
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
             textAppender = new AppendTextDelegate(AppendText);
+            connectClientList = new List<Socket>();
 
+            IPHostEntry hostEntry = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress addr in hostEntry.AddressList)
+            {
+                if (addr.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    thisAddress = addr;
+                    break;
+                }
 
+            }
+
+            if (thisAddress == null) thisAddress = IPAddress.Loopback;
+            textAddress.Text = thisAddress.ToString();
+            dataGridView.ReadOnly = true;
         }
 
         // 메시지, 상태 등의 내역 쓰기
