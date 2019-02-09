@@ -198,12 +198,16 @@ namespace Server
             }
         }
 
+        // 보내기 버튼 누를 때 텍스트 보내기
+        private void buttonSend_Click(object sender, EventArgs e) { SendText(textSend.Text.Trim()); }
+
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {
             if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
             else textStatus.Text += "\r\n" + message;
         }
+
     }
 
     // Callback에 대한 내용 저장을 위한 Class
