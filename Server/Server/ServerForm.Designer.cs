@@ -91,6 +91,7 @@
             this.buttonConnect.TabIndex = 0;
             this.buttonConnect.Text = "시작";
             this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // buttonDisconnect
             // 
