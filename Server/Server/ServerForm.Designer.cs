@@ -149,6 +149,7 @@
             this.textSend.Name = "textSend";
             this.textSend.Size = new System.Drawing.Size(454, 26);
             this.textSend.TabIndex = 7;
+            this.textSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textSend_KeyDown);
             // 
             // buttonSend
             // 
