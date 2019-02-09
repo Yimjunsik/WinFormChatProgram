@@ -38,7 +38,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.NickName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelSend = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textSend = new System.Windows.Forms.TextBox();
             this.buttonSend = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -143,13 +142,6 @@
             this.labelSend.Text = "입 력";
             this.labelSend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(11, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 12;
-            // 
             // textSend
             // 
             this.textSend.Font = new System.Drawing.Font("굴림", 12F);
@@ -175,7 +167,6 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textSend);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelSend);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textStatus);
@@ -207,7 +198,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn NickName;
         private System.Windows.Forms.Label labelSend;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textSend;
         private System.Windows.Forms.Button buttonSend;
     }
