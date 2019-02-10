@@ -39,6 +39,7 @@
             this.textSend = new System.Windows.Forms.TextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonDisconnect = new System.Windows.Forms.Button();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -144,11 +145,22 @@
             this.buttonDisconnect.Text = "연결끊기";
             this.buttonDisconnect.UseVisualStyleBackColor = true;
             // 
+            // buttonSend
+            // 
+            this.buttonSend.Font = new System.Drawing.Font("굴림", 12F);
+            this.buttonSend.Location = new System.Drawing.Point(455, 385);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(102, 29);
+            this.buttonSend.TabIndex = 8;
+            this.buttonSend.Text = "보내기";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.textSend);
@@ -180,6 +192,7 @@
         private System.Windows.Forms.TextBox textSend;
         private System.Windows.Forms.Button buttonConnect;
         private System.Windows.Forms.Button buttonDisconnect;
+        private System.Windows.Forms.Button buttonSend;
     }
 }
 
