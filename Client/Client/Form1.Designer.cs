@@ -31,6 +31,7 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelNickName = new System.Windows.Forms.Label();
             this.labelPort = new System.Windows.Forms.Label();
+            this.labelSend = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -63,11 +64,22 @@
             this.labelPort.Text = "포트 번호";
             this.labelPort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelSend
+            // 
+            this.labelSend.Font = new System.Drawing.Font("굴림", 12F);
+            this.labelSend.Location = new System.Drawing.Point(3, 382);
+            this.labelSend.Name = "labelSend";
+            this.labelSend.Size = new System.Drawing.Size(94, 35);
+            this.labelSend.TabIndex = 6;
+            this.labelSend.Text = "입 력";
+            this.labelSend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.labelSend);
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.labelNickName);
             this.Controls.Add(this.labelAddress);
@@ -82,6 +94,7 @@
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Label labelNickName;
         private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.Label labelSend;
     }
 }
 
