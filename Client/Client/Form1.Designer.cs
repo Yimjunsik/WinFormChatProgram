@@ -33,6 +33,7 @@
             this.labelPort = new System.Windows.Forms.Label();
             this.labelSend = new System.Windows.Forms.Label();
             this.textAddress = new System.Windows.Forms.TextBox();
+            this.textNickName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -83,11 +84,20 @@
             this.textAddress.Size = new System.Drawing.Size(246, 26);
             this.textAddress.TabIndex = 3;
             // 
+            // textNickName
+            // 
+            this.textNickName.Font = new System.Drawing.Font("굴림", 12F);
+            this.textNickName.Location = new System.Drawing.Point(103, 38);
+            this.textNickName.Name = "textNickName";
+            this.textNickName.Size = new System.Drawing.Size(246, 26);
+            this.textNickName.TabIndex = 11;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.textNickName);
             this.Controls.Add(this.textAddress);
             this.Controls.Add(this.labelSend);
             this.Controls.Add(this.labelPort);
@@ -107,6 +117,7 @@
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.Label labelSend;
         private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.TextBox textNickName;
     }
 }
 
