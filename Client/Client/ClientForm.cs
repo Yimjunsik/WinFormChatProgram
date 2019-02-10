@@ -13,9 +13,19 @@ namespace Client
 {
     public partial class ClientForm : Form
     {
+        delegate void AppendTextDelegate(string s);
+        AppendTextDelegate textAppender;
+
         public ClientForm()
         {
             InitializeComponent();
+        }
+
+        // 메세지, 상태 등의 내역 쓰기
+        private void AppendText(string message)
+        {
+            if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
+            else textStatus.Text += "\r\n" + message;
         }
     }
 
