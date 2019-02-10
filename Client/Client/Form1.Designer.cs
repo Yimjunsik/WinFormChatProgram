@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelAddress = new System.Windows.Forms.Label();
+            this.labelNickName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -41,11 +42,22 @@
             this.labelAddress.Text = "서버 주소";
             this.labelAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelNickName
+            // 
+            this.labelNickName.Font = new System.Drawing.Font("굴림", 12F);
+            this.labelNickName.Location = new System.Drawing.Point(3, 35);
+            this.labelNickName.Name = "labelNickName";
+            this.labelNickName.Size = new System.Drawing.Size(94, 33);
+            this.labelNickName.TabIndex = 10;
+            this.labelNickName.Text = "닉네임";
+            this.labelNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.labelNickName);
             this.Controls.Add(this.labelAddress);
             this.Name = "ClientForm";
             this.Text = "Chatting by junsik - Client";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.Label labelNickName;
     }
 }
 
