@@ -37,6 +37,7 @@
             this.textPort = new System.Windows.Forms.TextBox();
             this.textStatus = new System.Windows.Forms.TextBox();
             this.textSend = new System.Windows.Forms.TextBox();
+            this.buttonConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -122,11 +123,22 @@
             this.textSend.Size = new System.Drawing.Size(346, 26);
             this.textSend.TabIndex = 7;
             // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Font = new System.Drawing.Font("굴림", 12F);
+            this.buttonConnect.Location = new System.Drawing.Point(455, 3);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(102, 29);
+            this.buttonConnect.TabIndex = 0;
+            this.buttonConnect.Text = "연결하기";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.textSend);
             this.Controls.Add(this.textStatus);
             this.Controls.Add(this.textPort);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.TextBox textPort;
         private System.Windows.Forms.TextBox textStatus;
         private System.Windows.Forms.TextBox textSend;
+        private System.Windows.Forms.Button buttonConnect;
     }
 }
 
