@@ -222,6 +222,8 @@ namespace Server
         // 연결끊기 버튼 클릭 시 연결 종료
         private void buttonDisconnect_Click(object sender, EventArgs e) { Disconnect(); }
 
+        // 폼 종료 시 연결 종료
+        private void ServerForm_FormClosing(object sender, FormClosingEventArgs e) { Disconnect(); }
 
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
@@ -229,6 +231,7 @@ namespace Server
             if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
             else textStatus.Text += "\r\n" + message;
         }
+
     }
 
     // Callback에 대한 내용 저장을 위한 Class

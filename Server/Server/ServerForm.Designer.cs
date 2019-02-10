@@ -182,6 +182,7 @@
             this.MaximizeBox = false;
             this.Name = "ServerForm";
             this.Text = "Chatting by junsik - Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerForm_FormClosing);
             this.Load += new System.EventHandler(this.ServerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
