@@ -219,6 +219,10 @@ namespace Server
             }
         }
 
+        // 연결끊기 버튼 클릭 시 연결 종료
+        private void buttonDisconnect_Click(object sender, EventArgs e) { Disconnect(); }
+
+
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {

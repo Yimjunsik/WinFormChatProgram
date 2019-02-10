@@ -101,6 +101,7 @@
             this.buttonDisconnect.TabIndex = 10;
             this.buttonDisconnect.Text = "종료";
             this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
             // 
             // textStatus
             // 
