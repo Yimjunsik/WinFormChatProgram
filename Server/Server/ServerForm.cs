@@ -204,6 +204,21 @@ namespace Server
         // Enter 누를 때 텍스트 보내기
         private void textSend_KeyDown(object sender, KeyEventArgs e) { if (e.KeyCode == Keys.Enter) SendText(textSend.Text.Trim()); }
 
+        // 연결 종료
+        private void Disconnect()
+        {
+            if (serverSocket != null && serverSocket.IsBound)
+            {
+                SendProcess(Encoding.UTF8.GetBytes("관리자\x01\x04"));
+                serverSocket.Close();
+                serverSocket = null;
+
+                AppendText("서버 종료가 완료되었습니다.");
+                while (dataGridView.Rows.Count > 0) dataGridView.Rows.RemoveAt(0);
+                
+            }
+        }
+
         // 메시지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {
