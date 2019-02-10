@@ -35,6 +35,7 @@
             this.textAddress = new System.Windows.Forms.TextBox();
             this.textNickName = new System.Windows.Forms.TextBox();
             this.textPort = new System.Windows.Forms.TextBox();
+            this.textStatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -102,11 +103,22 @@
             this.textPort.TabIndex = 4;
             this.textPort.Text = "8080";
             // 
+            // textStatus
+            // 
+            this.textStatus.Location = new System.Drawing.Point(3, 73);
+            this.textStatus.Multiline = true;
+            this.textStatus.Name = "textStatus";
+            this.textStatus.ReadOnly = true;
+            this.textStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textStatus.Size = new System.Drawing.Size(554, 306);
+            this.textStatus.TabIndex = 9;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.textStatus);
             this.Controls.Add(this.textPort);
             this.Controls.Add(this.textNickName);
             this.Controls.Add(this.textAddress);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.TextBox textNickName;
         private System.Windows.Forms.TextBox textPort;
+        private System.Windows.Forms.TextBox textStatus;
     }
 }
 
