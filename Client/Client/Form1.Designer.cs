@@ -32,6 +32,7 @@
             this.labelNickName = new System.Windows.Forms.Label();
             this.labelPort = new System.Windows.Forms.Label();
             this.labelSend = new System.Windows.Forms.Label();
+            this.textAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelAddress
@@ -74,11 +75,20 @@
             this.labelSend.Text = "입 력";
             this.labelSend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textAddress
+            // 
+            this.textAddress.Font = new System.Drawing.Font("굴림", 12F);
+            this.textAddress.Location = new System.Drawing.Point(103, 3);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(246, 26);
+            this.textAddress.TabIndex = 3;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 441);
+            this.Controls.Add(this.textAddress);
             this.Controls.Add(this.labelSend);
             this.Controls.Add(this.labelPort);
             this.Controls.Add(this.labelNickName);
@@ -86,6 +96,7 @@
             this.Name = "ClientForm";
             this.Text = "Chatting by junsik - Client";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +106,7 @@
         private System.Windows.Forms.Label labelNickName;
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.Label labelSend;
+        private System.Windows.Forms.TextBox textAddress;
     }
 }
 
