@@ -40,6 +40,44 @@ namespace Client
             textAddress.Text = defaultAddress.ToString();
         }
 
+        // 데이터 받기 Callback
+        private void ReceivedData(IAsyncResult asyncResult)
+        {
+            AsyncObject asyncObject = asyncResult.AsyncState as AsyncObject;
+            try { asyncObject.WorkingSocket.EndReceive(asyncResult); }
+            catch
+            {
+                asyncObject.WorkingSocket.Close();
+                return;
+            }
+
+            string text = Encoding.UTF8.GetString(asyncObject.Buffer);
+            string[] tokens = text.Split('\x01');
+            try
+            {
+                if (tokens[1][0] == '\x02') AppendText(tokens[0] + "님이 입장하셨습니다.");
+                else if (tokens[1][0] == '\x03') AppendText(tokens[0] + "님이 퇴장하셨습니다.");
+                else if (tokens[1][0] == '\x04')
+                {
+                    try
+                    {
+                        AppendText("서버 종료로 서버와의 연결이 해제되었습니다.");
+                        serverSocket.Close();
+                        serverSocket = null;
+                        textAddress.ReadOnly = false; textPort.ReadOnly = false; textNickName.ReadOnly = false;
+                    }
+                    catch { }
+                    return;
+                }
+                else AppendText("[받음] " + tokens[0] + " : " + tokens[1]);
+            }
+            catch { }
+
+            asyncObject.ClearBuffer();
+            try { asyncObject.WorkingSocket.BeginReceive(asyncObject.Buffer, 0, 4096, 0, ReceivedData, asyncObject); }
+            catch { asyncObject.WorkingSocket.Close(); }
+        }
+
         // 텍스트 보내기
         private void SendText(string message)
         {
