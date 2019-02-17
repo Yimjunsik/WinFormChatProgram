@@ -40,6 +40,20 @@ namespace Client
             textAddress.Text = defaultAddress.ToString();
         }
 
+        // 연결 종료
+        private void Disconnect()
+        {
+            if (serverSocket != null && serverSocket.Connected)
+            {
+                byte[] byteData = Encoding.UTF8.GetBytes(textNickName.Text + "\x01\x03");
+                serverSocket.Send(byteData);
+
+                AppendText("서버와 연결이 해제되었습니다.");
+                serverSocket.Close();
+                serverSocket = null;
+            }
+            textAddress.ReadOnly = false; textPort.ReadOnly = false; textNickName.ReadOnly = false;
+        }
 
         // 메세지, 상태 등의 내역 쓰기
         private void AppendText(string message)
