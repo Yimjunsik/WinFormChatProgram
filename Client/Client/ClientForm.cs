@@ -63,6 +63,9 @@ namespace Client
             }
         }
 
+        // 보내기 버튼 누를 때 텍스트 보내기
+        private void buttonSend_Click(object sender, EventArgs e) { SendText(textSend.Text.Trim()); }
+
         // 연결 종료
         private void Disconnect()
         {
