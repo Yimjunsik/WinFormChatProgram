@@ -40,6 +40,49 @@ namespace Client
             textAddress.Text = defaultAddress.ToString();
         }
 
+        // 연결하기 버튼 클릭 시 연결 시작
+        private void buttonConnect_Click(object sender, EventArgs e)
+        {
+            int port;
+            if (serverSocket == null) serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            try { port = Int32.Parse(textPort.Text); }
+            catch
+            {
+                MessageBox.Show("포트 번호가 잘못 입력되었습니다.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textPort.Focus();
+                textPort.SelectAll();
+                return;
+            }
+
+            if (serverSocket.Connected)
+                MessageBox.Show("이미 연결되어 있습니다.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (port < 0 || port > 65535)
+            {
+                MessageBox.Show("포트 번호가 잘못 입력되었습니다.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textPort.Focus();
+                textPort.SelectAll();
+            }
+            else if (textNickName.Text == "")
+                MessageBox.Show("닉네임을 채워 넣어주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                try { serverSocket.Connect(textAddress.Text, port); }
+                catch (SocketException ex)
+                {
+                    MessageBox.Show("연결에 실패하였습니다. \n오류 내용 : " + ex.Message, "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                byte[] byteData = Encoding.UTF8.GetBytes(textNickName.Text + '\x01' + '\x02');
+                serverSocket.Send(byteData);
+                textAddress.ReadOnly = true; textPort.ReadOnly = true; textNickName.ReadOnly = true;
+
+                AppendText("서버와 연결되었습니다.");
+                AsyncObject asyncObject = new AsyncObject(4096, serverSocket);
+                serverSocket.BeginReceive(asyncObject.Buffer, 0, asyncObject.BufferSize, 0, ReceivedData, asyncObject);
+            }
+        }
+
         // 데이터 받기 Callback
         private void ReceivedData(IAsyncResult asyncResult)
         {
@@ -50,7 +93,7 @@ namespace Client
                 asyncObject.WorkingSocket.Close();
                 return;
             }
-
+            
             string text = Encoding.UTF8.GetString(asyncObject.Buffer);
             string[] tokens = text.Split('\x01');
             try
@@ -135,7 +178,6 @@ namespace Client
             if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
             else textStatus.Text += "\r\n" + message;
         }
-
 
     }
 

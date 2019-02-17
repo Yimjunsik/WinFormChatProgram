@@ -135,6 +135,7 @@
             this.buttonConnect.TabIndex = 0;
             this.buttonConnect.Text = "연결하기";
             this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // buttonDisconnect
             // 
