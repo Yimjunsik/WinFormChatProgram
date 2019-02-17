@@ -61,6 +61,10 @@ namespace Client
             if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
             else textStatus.Text += "\r\n" + message;
         }
+
+        // 폼 종료시 연결 종료
+        private void ClientForm_FormClosing(object sender, FormClosingEventArgs e) { Disconnect(); }
+
     }
 
     // Callback에 대한 내용 저장을 위한 Class

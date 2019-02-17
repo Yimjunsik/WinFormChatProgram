@@ -174,6 +174,7 @@
             this.Controls.Add(this.labelAddress);
             this.Name = "ClientForm";
             this.Text = "Chatting by junsik - Client";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
