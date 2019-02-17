@@ -62,6 +62,9 @@ namespace Client
             else textStatus.Text += "\r\n" + message;
         }
 
+        // 연결끊기 버튼 클릭 시 연결 종료
+        private void buttonDisconnect_Click(object sender, EventArgs e) { Disconnect(); }
+
         // 폼 종료시 연결 종료
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e) { Disconnect(); }
 

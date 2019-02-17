@@ -144,6 +144,7 @@
             this.buttonDisconnect.TabIndex = 0;
             this.buttonDisconnect.Text = "연결끊기";
             this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
             // 
             // buttonSend
             // 
