@@ -55,18 +55,18 @@ namespace Client
             textAddress.ReadOnly = false; textPort.ReadOnly = false; textNickName.ReadOnly = false;
         }
 
+        // 연결끊기 버튼 클릭 시 연결 종료
+        private void buttonDisconnect_Click(object sender, EventArgs e) { Disconnect(); }
+
+        // 폼 종료시 연결 종료
+        private void ClientForm_FormClosing(object sender, FormClosingEventArgs e) { Disconnect(); }
+
         // 메세지, 상태 등의 내역 쓰기
         private void AppendText(string message)
         {
             if (textStatus.InvokeRequired) textStatus.Invoke(textAppender, message);
             else textStatus.Text += "\r\n" + message;
         }
-
-        // 연결끊기 버튼 클릭 시 연결 종료
-        private void buttonDisconnect_Click(object sender, EventArgs e) { Disconnect(); }
-
-        // 폼 종료시 연결 종료
-        private void ClientForm_FormClosing(object sender, FormClosingEventArgs e) { Disconnect(); }
 
     }
 
