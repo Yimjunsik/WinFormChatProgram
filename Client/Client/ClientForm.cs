@@ -40,6 +40,29 @@ namespace Client
             textAddress.Text = defaultAddress.ToString();
         }
 
+        // 텍스트 보내기
+        private void SendText(string message)
+        {
+            textSend.Clear();
+            if (!serverSocket.Connected)
+            {
+                MessageBox.Show("서버가 실행되고 있지 않습니다.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else if (string.IsNullOrEmpty(message))
+            {
+                MessageBox.Show("텍스트가 입력되지 않았습니다.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textSend.Focus();
+            }
+            else
+            {
+                string address = (serverSocket.LocalEndPoint as IPEndPoint).Address.ToString();
+                byte[] byteData = Encoding.UTF8.GetBytes(textNickName.Text + '\x01' + message);
+                serverSocket.Send(byteData);
+
+                // Thread.Sleep(1000); // 비동기 테스트를 위함
+                AppendText("[보냄] " + textNickName.Text + " : " + message);
+            }
+        }
+
         // 연결 종료
         private void Disconnect()
         {
